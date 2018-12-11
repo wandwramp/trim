@@ -19,7 +19,7 @@ To specify an output file, pass the `-o` argument to either program.
 
 ` $ trim -o output.mem input.srec `
 
-Both programs will now create or overwrite the specified file.
+Both programs will create or overwrite the specified file.
 
 ## Building
 
