@@ -1,5 +1,12 @@
 CC = gcc
 RM = rm -f
+ifndef INSTALLDIR
+INSTALLDIR=~/wramp-install/
+endif
+MKDIR=mkdir -p
+COPY=cp
+BUILDBINS=trim 
+INSTALLBINS=$(INSTALLDIR)trim
 CFLAGS = -Wall -O3
 
 .c.o:	$<
@@ -16,3 +23,8 @@ clean:
 
 clobber:
 	$(RM) trim
+	$(RM) $(INSTALLBINS)
+	
+install: all
+	$(MKDIR) $(INSTALLDIR)
+	$(COPY) $(BUILDBINS) $(INSTALLDIR)
